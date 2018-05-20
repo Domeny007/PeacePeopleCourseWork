@@ -75,7 +75,6 @@ class RegistrationViewController: UIViewController {
                 return
             } else {
                 self.initiateMainTabBarController()
-                //self.messengerViewController?.setupRightMessages()
             }
         }
     }

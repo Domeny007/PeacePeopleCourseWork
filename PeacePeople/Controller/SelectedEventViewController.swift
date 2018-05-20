@@ -82,7 +82,7 @@ class SelectedEventViewController: UIViewController {
         ownerNameLabel.text = ownerName
         ownerEmailLabel.text = ownerEmail
         selectedEventTextView.text = eventText
-        selectedEventNavigationBar.topItem?.title = eventName
+        //selectedEventNavigationBar.topItem?.title = eventName
         selectedEventNameTextField.text = eventName
     }
     
@@ -137,7 +137,7 @@ class SelectedEventViewController: UIViewController {
                     print(error!)
                     return
                 } else {
-                    self.selectedEventNavigationBar.topItem?.title = newEventName
+                    //self.selectedEventNavigationBar.topItem?.title = newEventName
                     sender.setTitle("Изменить", for: [])
                     self.selectedEventTextView.isEditable = false
                     self.selectedEventNameTextField.isEnabled = false
@@ -205,7 +205,7 @@ class SelectedEventViewController: UIViewController {
     }
     
     @IBAction func completeButtonPressed(_ sender: UIButton) {
-        guard let eventId = event?.eventId, let ownerId = owner?.id else { return }
+        guard let eventId = event?.eventId else { return }
         
         let usersRefrence = Database.database().reference().child("users")
         let takepartuserRefrence = Database.database().reference().child("takepartuser").child(eventId)

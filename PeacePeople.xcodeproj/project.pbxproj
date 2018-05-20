@@ -10,7 +10,6 @@
 		AA1B59D220824FE000F51D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B59D120824FE000F51D5B /* AppDelegate.swift */; };
 		AA1B59D720824FE000F51D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1B59D520824FE000F51D5B /* Main.storyboard */; };
 		AA1B59DA20824FE000F51D5B /* PeacePeople.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA1B59D820824FE000F51D5B /* PeacePeople.xcdatamodeld */; };
-		AA1B59DC20824FE200F51D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1B59DB20824FE200F51D5B /* Assets.xcassets */; };
 		AA1B59DF20824FE200F51D5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1B59DD20824FE200F51D5B /* LaunchScreen.storyboard */; };
 		AA2EA84D2083685100B84DCC /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2EA84C2083685100B84DCC /* RegistrationViewController.swift */; };
 		AA2EA8502083A5CB00B84DCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA2EA84F2083A5CB00B84DCC /* GoogleService-Info.plist */; };
@@ -21,6 +20,7 @@
 		AA461BA620A4C4E500C9BB36 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA461BA520A4C4E500C9BB36 /* UserCell.swift */; };
 		AA47E31720A43EF80049F68B /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47E31620A43EF80049F68B /* NewMessageViewController.swift */; };
 		AA47E31A20A443E20049F68B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47E31920A443E20049F68B /* User.swift */; };
+		AA57B13D20B0A8EC007D2BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA57B13C20B0A8EC007D2BD9 /* Assets.xcassets */; };
 		AA61B65A20AB621C001F9EEC /* GeneralEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61B65920AB621C001F9EEC /* GeneralEventsViewController.swift */; };
 		AA61B65C20AB6740001F9EEC /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61B65B20AB6740001F9EEC /* EventsViewController.swift */; };
 		AA61B65E20AB6A0B001F9EEC /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61B65D20AB6A0B001F9EEC /* NewEventViewController.swift */; };
@@ -45,7 +45,6 @@
 		AA1B59D120824FE000F51D5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA1B59D620824FE000F51D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA1B59D920824FE000F51D5B /* PeacePeople.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PeacePeople.xcdatamodel; sourceTree = "<group>"; };
-		AA1B59DB20824FE200F51D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1B59DE20824FE200F51D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1B59E020824FE200F51D5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA2EA84C2083685100B84DCC /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		AA461BA520A4C4E500C9BB36 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		AA47E31620A43EF80049F68B /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
 		AA47E31920A443E20049F68B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA57B13C20B0A8EC007D2BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA61B65920AB621C001F9EEC /* GeneralEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEventsViewController.swift; sourceTree = "<group>"; };
 		AA61B65B20AB6740001F9EEC /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		AA61B65D20AB6A0B001F9EEC /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +121,6 @@
 				AA652D0320A9A89400B0BD18 /* View */,
 				AA2EA84E2083686900B84DCC /* Controller */,
 				AA9DFAFA2083CBD600692D4A /* Other */,
-				AA854ABE20A4DFA500547FD9 /* Helpers */,
 				AA9DFAFC2083CC1100692D4A /* plists */,
 			);
 			path = PeacePeople;
@@ -166,21 +165,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		AA854ABE20A4DFA500547FD9 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				AA854ABF20A4DFB800547FD9 /* Extentions.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		AA9DFAFA2083CBD600692D4A /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				AA854ABF20A4DFB800547FD9 /* Extentions.swift */,
+				AA57B13C20B0A8EC007D2BD9 /* Assets.xcassets */,
 				AA461BA320A47C8700C9BB36 /* SomeConstants.swift */,
 				AA1B59D120824FE000F51D5B /* AppDelegate.swift */,
 				AA1B59D520824FE000F51D5B /* Main.storyboard */,
-				AA1B59DB20824FE200F51D5B /* Assets.xcassets */,
 				AA1B59DD20824FE200F51D5B /* LaunchScreen.storyboard */,
 				AA1B59D820824FE000F51D5B /* PeacePeople.xcdatamodeld */,
 			);
@@ -276,8 +268,8 @@
 				AAF863D220AC9BA600C98295 /* EventTableViewCell.xib in Resources */,
 				AA1B59DF20824FE200F51D5B /* LaunchScreen.storyboard in Resources */,
 				AA2EA8502083A5CB00B84DCC /* GoogleService-Info.plist in Resources */,
-				AA1B59DC20824FE200F51D5B /* Assets.xcassets in Resources */,
 				AA1B59D720824FE000F51D5B /* Main.storyboard in Resources */,
+				AA57B13D20B0A8EC007D2BD9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

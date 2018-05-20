@@ -57,10 +57,7 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
                 print(error!)
                 return
             }
-            
             self.initiateMainTabBarController()
-            self.messengerViewController?.messengerLabel.text = values["name"] as? String
-            
         })
     }
     

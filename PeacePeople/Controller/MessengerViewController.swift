@@ -12,7 +12,6 @@ import Firebase
 class MessengerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var messengerLabel: UILabel!
     
     
     var messages = [Message]()
@@ -20,7 +19,6 @@ class MessengerViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showInformationOfUser()
         setImageOnBackground()
         tableView.register(UserCell.self, forCellReuseIdentifier: messengerCellIdentifier)
         setupRightMessages()
@@ -38,17 +36,10 @@ class MessengerViewController: UIViewController, UITableViewDelegate, UITableVie
         present(newMessageViewController, animated: true, completion: nil)
     }
     
-    
-    func showInformationOfUser() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let userDictionary = snapshot.value as? [String: AnyObject] {
-                self.messengerLabel.text = userDictionary["name"] as? String
-            }
-        }, withCancel: nil)
-    }
     func setImageOnBackground() {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: backgroundImageString)!)
+        tableView.backgroundColor = .clear
+         tableView.backgroundColor = .clear
     }
     func observeUserMessages() {
         
@@ -61,8 +52,8 @@ class MessengerViewController: UIViewController, UITableViewDelegate, UITableVie
                     guard let dictionary = spanshot.value as? [String : AnyObject] else { return }
                     let message = Message()
                     message.setValuesForKeys(dictionary)
-                    if let toUser = message.toUser {
-                        self.messagesDictionary[toUser] = message
+                    if let chatPartnerId = message.chatPartnerId() {
+                        self.messagesDictionary[chatPartnerId] = message
                         self.messages = Array(self.messagesDictionary.values)
                     }
                     DispatchQueue.main.async {
@@ -80,6 +71,7 @@ class MessengerViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: messengerCellIdentifier, for: indexPath) as! UserCell
         let message = messages[indexPath.row]
         cell.message = message
+        cell.backgroundColor = .clear
         return cell
     }
     
