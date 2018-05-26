@@ -58,7 +58,6 @@ class ChatMessageCollectionViewCell: UICollectionViewCell {
         profileImageView.heightAnchor.constraint(equalToConstant: 32).isActive = true
         
         bubleViewRightAnchor = bubleView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12)
-        
         bubleViewLeftAnchor = bubleView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8)
         bubleViewRightAnchor?.isActive = true
         bubleView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

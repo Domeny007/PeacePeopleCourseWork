@@ -45,7 +45,35 @@ class SelectedEventViewController: UIViewController {
         changeButton.setTitle("Изменить", for: .normal)
         checkIfUserIsParticipant()
         setAlphaForTextFieldAndTextView()
+        disableKeyboardByTouchingAnywhere()
+        NotificationCenter.default.addObserver(self, selector: #selector(SelectedEventViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SelectedEventViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    func disableKeyboardByTouchingAnywhere() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTouchUpSide))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTouchUpSide() {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height - 100
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height - 100
+            }
+        }
+    }
+    
     
     func deleteEvent()  {
         guard let eventId = event?.eventId, let eventTheme = eventsTheme else { return }

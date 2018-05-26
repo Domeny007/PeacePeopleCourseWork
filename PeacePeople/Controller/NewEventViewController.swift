@@ -23,6 +23,9 @@ class NewEventViewController: UIViewController {
         setImageOnBackground()
         guard let generalThemeName = generalThemeName else { return }
         generalThemeLabel.text = "Категория: \(String(describing: generalThemeName))"
+        disableKeyboardByTouchingAnywhere()
+        NotificationCenter.default.addObserver(self, selector: #selector(NewEventViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NewEventViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
@@ -52,6 +55,31 @@ class NewEventViewController: UIViewController {
             }
         }
     }
+    func disableKeyboardByTouchingAnywhere() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTouchUpSide))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTouchUpSide() {
+        view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
     func setImageOnBackground() {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: backgroundImageString)!)
     }

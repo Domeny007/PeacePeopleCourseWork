@@ -28,11 +28,29 @@ class ChatLogViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.register(ChatMessageCollectionViewCell.self, forCellWithReuseIdentifier: collectionVCCellIdentifier)
         disableKeyboardByTouchingAnywhere()
         setImageOnBackground()
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatLogViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ChatLogViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         chatLogLabel.text = user?.name
         observeMessages()
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
     }
     func setImageOnBackground() {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: backgroundImageString)!)

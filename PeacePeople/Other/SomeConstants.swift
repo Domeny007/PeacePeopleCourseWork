@@ -66,7 +66,7 @@ func fetchCurrentUser(with percentLabel: UILabel, and maxPercent : Double, and d
         
     }, withCancel: nil)
     
-    
+
 }
 
 

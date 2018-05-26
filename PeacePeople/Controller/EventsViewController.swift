@@ -91,7 +91,6 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         guard let generalEventTheme = generalEventTheme else { return }
         
         refrence.child("events").child(generalEventTheme).observe(.childAdded, with: { (snapshot) in
-            
             guard let dictionary = snapshot.value as? [String: AnyObject] else { return }
             let event = Event()
             self.fetchOwner(with: event)
